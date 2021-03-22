@@ -35,7 +35,7 @@ $ python3 ui2.py
 ```
 
 
-### output
+### Output
 
 - **Detection Results**
 
