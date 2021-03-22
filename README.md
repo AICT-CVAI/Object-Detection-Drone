@@ -19,8 +19,6 @@
 - faster rcnn : https://drive.google.com/file/d/1mXANwNMbQU7tmmmhZ81dFaIRvXU6rDQL/view?usp=sharing
 - retina net : https://drive.google.com/file/d/1mXANwNMbQU7tmmmhZ81dFaIRvXU6rDQL/view?usp=sharing
 
-⚠️ If you use other model(Cascade RCNN, RetinaNet etc.), enter <a href='https://github.com/open-mmlab/mmdetection'>this page</a>
-
 
 ### How to do?
 
