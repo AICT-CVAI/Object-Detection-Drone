@@ -19,9 +19,6 @@
 - faster rcnn : https://drive.google.com/file/d/1mXANwNMbQU7tmmmhZ81dFaIRvXU6rDQL/view?usp=sharing
 - retina net : https://drive.google.com/file/d/1mXANwNMbQU7tmmmhZ81dFaIRvXU6rDQL/view?usp=sharing
 
-⚠️ weights/drone_survivor.pt  = yolov5 weight model
-
-
 ⚠️ If you use other model(Cascade RCNN, RetinaNet etc.), enter <a href='https://github.com/open-mmlab/mmdetection'>this page</a>
 
 
@@ -36,3 +33,17 @@ $ pip install -r requirements.txt
 ```
 $ python3 ui2.py
 ```
+
+
+### output
+
+- **Detection Results**
+
+<img src='https://user-images.githubusercontent.com/47775179/111962407-9a1c3700-8b35-11eb-9ed4-a3bdb1f0abb6.png'></src>
+
+
+- **UI structure**
+
+<img src='https://user-images.githubusercontent.com/47775179/111962311-82dd4980-8b35-11eb-9487-14093fe78982.png'></img>
+
+
