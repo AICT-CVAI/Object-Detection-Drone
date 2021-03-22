@@ -13,7 +13,7 @@
 
 ⚠️ weights/drone_survivor.pt  = yolov5 weight model
 
-⚠️ If you use other model(Cascade RCNN, RetinaNet etc.), enter the - <a href='https://github.com/open-mmlab/mmdetection'>this page</a>
+⚠️ If you use other model(Cascade RCNN, RetinaNet etc.), enter <a href='https://github.com/open-mmlab/mmdetection'>this page</a>
 
 
 ### How to do?
