@@ -23,7 +23,7 @@
 ### How to do?
 
 ```
-$ git clone https://github.com/winston1214/Object_Detection_Drone && cd Object_Detection_Drone
+$ git clone https://github.com/AICT-CVAI/Object-Detection-Drone && cd Object_Detection_Drone
 ```
 ```
 $ pip install -r requirements.txt
