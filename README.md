@@ -25,6 +25,10 @@
 ```
 $ git clone https://github.com/AICT-CVAI/Object-Detection-Drone && cd Object_Detection_Drone
 ```
+**example. yolov5**
+```
+$ cd yolov5
+```
 ```
 $ pip install -r requirements.txt
 ```
