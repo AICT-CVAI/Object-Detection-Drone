@@ -63,7 +63,7 @@ class WindowClass(QMainWindow, form_class) :
         os.system('python3 detect_result.py --source data/test.MP4 --weights weights/drone_survivor.pt --classes 0 --project ui_test --img 3840')
         QApplication.processEvents()
         self.textBrowser_2.append("YOLO Finish!!")
-        self.textBrowser_2.append("Go to /home/cvai2070/drone/ui_test")
+        self.textBrowser_2.append("Go to ui_test")
         # self.work.start()
         fname = QFileDialog.getOpenFileName(self)
         
