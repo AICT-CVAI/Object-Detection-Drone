@@ -23,7 +23,7 @@
 ### How to do?
 
 ```
-$ git clone https://github.com/AICT-CVAI/Object-Detection-Drone && cd Object_Detection_Drone
+$ git clone https://github.com/AICT-CVAI/Object-Detection-Drone && cd Object-Detection-Drone
 ```
 **example. yolov5**
 ```
