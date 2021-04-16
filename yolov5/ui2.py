@@ -25,8 +25,8 @@ class WindowClass(QMainWindow, form_class) :
 
         
         
-        self.gpspath = "/Users/pel-macmini2/gps/"
-        self.slicepath = "/home/cvai2070/drone/ui_test"
+        self.gpspath = "~/Object-Detection-Drone/yolov5/gps"
+        self.slicepath = "~/Object-Detection-Drone/yolov5/ui_test/"
         
         self.btn_1.clicked.connect(self.btn_videoslice)
         self.btn_2.clicked.connect(self.btn_yolo)
@@ -46,7 +46,7 @@ class WindowClass(QMainWindow, form_class) :
         success = True
         
         while success:
-            cv2.imwrite("/home/cvai2070/drone/ui_test/%d.jpg" % count, image)
+            cv2.imwrite("~/Object-Detection-Drone/yolov5/ui_test/%d.jpg" % count, image)
             success,image = vidcap.read()
             print("saved image %d.jpg" % count)
             
