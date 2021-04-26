@@ -9,11 +9,8 @@ import cv2
 from PyQt5.QtCore import QCoreApplication, QThread
 from subprocess import call
 form_class = uic.loadUiType("gui.ui")[0]
-
-# class Worker(QThread):
-#     def run(self):
-#         # os.system('python yolo.py')
-#         fname = QFileDialog.getOpenFileName()
+import tkinter as tk
+from tkinter import messagebox
 
 class WindowClass(QMainWindow, form_class) :
     def __init__(self):
@@ -58,21 +55,25 @@ class WindowClass(QMainWindow, form_class) :
         
         
     def btn_yolo(self):
-        self.textBrowser_2.append("YOLO start!!")
+        self.textBrowser_2.append("Detect start!!")
         time.sleep(1)
-        os.system('python3 detect_result.py --source data/test.mp4 --weights weights/drone_survivor.pt --classes 0 --project ui_test --img 3840 --conf 0.6')
+        os.system('python3 detect_result.py --source data/test.mp4 --weights weights/drone_survivor.pt --classes 0 --project ui_test --img 3840 --conf 0.6 --save-txt')
         QApplication.processEvents()
-        self.textBrowser_2.append("YOLO Finish!!")
-        self.textBrowser_2.append("Go to ui_test")
+        self.textBrowser_2.append("Detect Finish!!")
+        self.textBrowser_2.append("Go to ui_test folder")
         # self.work.start()
         fname = QFileDialog.getOpenFileName(self)
         
     
     def btn_potholemap(self):
-        self.textBrowser_2.append("Mapping start!!")
-        time.sleep(1)
-        os.system('python3 matching.py')    # Shin Go
-        self.textBrowser_2.append("Mapping file save!!")
+        self.textBrowser_2.append("신고되었습니다!")
+        root = tk.Tk()
+        msg = messagebox.showwarning(title='Person Detect!', message='Notification')
+        if msg == 'ok':
+            root.destroy()
+        # time.sleep(1)
+        #os.system('python3 matching.py')    # Shin Go
+        #self.textBrowser_2.append("Mapping file save!!")
         
         
     def btn_clear(self) :
