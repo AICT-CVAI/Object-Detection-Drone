@@ -90,7 +90,7 @@ def detect(save_img=False):
             else:
                 p, s, im0, frame = path, '', im0s, getattr(dataset, 'frame', 0)
             h,w,c = im0.shape
-            cv2.putText(im0,'frame : {}'.format(idx),(10,100),0,3,(0,0,255),2,cv2.LINE_AA)
+            
             p = Path(p)  # to Path
             save_path = str(save_dir / p.name)  # img.jpg
             txt_path = str(save_dir / 'labels' / p.stem) + ('' if dataset.mode == 'image' else f'_{frame}')  # img.txt
@@ -104,25 +104,29 @@ def detect(save_img=False):
                 for c in det[:, -1].unique():
                     n = (det[:, -1] == c).sum()  # detections per class
                     s += f'{n} {names[int(c)]}s, '  # add to string
-
+                    cv2.putText(im0,'Person : {}'.format(n),(10,100),0,3,(0,0,255),2,cv2.LINE_AA)
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
-                        line = (cls, *xywh, conf) if opt.save_conf else (cls, *xywh)  # label format
+                        xywh2 = xyxy2xywh(torch.tensor(xyxy).view(1, 4)).view(-1).tolist()
+                        xywh_string = ' '.join((list(map(str,xywh2))))
+                        line = (cls, *xywh, conf) if opt.save_conf else (names[int(cls)], *xywh)  # label format
                         with open(txt_path + '.txt', 'a') as f:
-                            f.write(('%g ' * len(line)).rstrip() % line + '\n')
+                            #f.write(('%g ' * len(line)).rstrip() % line + '\n')
+                            f.write('Person :{} , xywh : {} '.format(n,xywh_string))
                         
                     if save_img or view_img:  # Add bbox to image
                         label = f'{names[int(cls)]} {conf:.2f}'
                         plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=3)
+                        
                         #cv2.imwrite('/home/user/drone/ui_test/{}.jpg'.format(idx), im0)
-                        if detecting == 1:
-                            root = tk.Tk()
-                            msg = messagebox.showwarning(title='Person Detect!', message='Notification!')
-                            if msg == 'ok':
-                                root.destroy()
-                            detecting=2
+                    if detecting == 1:
+                        root = tk.Tk()
+                        msg = messagebox.showwarning(title='Person Detect!', message='Notification!')
+                        if msg == 'ok':
+                            root.destroy()
+                        detecting=2
 
             im_show = im0.copy()
             im_show = cv2.resize(im_show, (0,0), fx=0.4, fy=0.4)
